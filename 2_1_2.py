@@ -27,3 +27,4 @@ print(t.cat((x,y), dim=1), end='\n')
 print(x.sum())
 
 print("Test Git Push")
+print("Git Successfully")
