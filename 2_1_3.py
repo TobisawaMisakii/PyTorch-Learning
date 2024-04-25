@@ -1,4 +1,5 @@
 import torch as t
+from torch import float32
 
 # #向量
 # x = t.arange(4)
@@ -50,4 +51,27 @@ print(M / sum_M)
 print(M.cumsum(axis=0))
 print(M.cumsum(axis=2))
 
+#dot product
+x = t.arange(4, dtype=t.float32)
+y = t.ones(4, dtype=t.float32)
+print(x)
+print(y)
+print(t.dot(x,y))
+
+#Matric * vector
+MatricA = t.arange(24,dtype=t.float32).reshape(4, 6)
+print(MatricA)
+print(MatricA.shape)
+print(y.shape)
+print(t.mv(MatricA.T, y))
+
+#Matric * Matric
+MatricB = t.ones(24, dtype=float32).reshape(4, 6)
+print(MatricB.T)
+print(MatricA)
+print(t.mm(MatricA, MatricB.T))
+
+#Norm L2范数
+print(t.norm(MatricA))
+print(t.norm(MatricB))
 
